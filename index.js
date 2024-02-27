@@ -45,10 +45,10 @@ app.post('/insert-person', async (req, res) => {
   }
 });
 
-app.put('/update-person', async (req, res) => {
+app.post('/update-person', async (req, res) => {
   try {
-    // Assuming the request body contains the _id of the person to update
-    const { _id } = req.body;
+    // Assuming the request body contains the _id and any other fields to update
+    const { _id, person: newPersonValue } = req.body;
 
     // Check if _id is provided
     if (!_id) {
@@ -56,7 +56,7 @@ app.put('/update-person', async (req, res) => {
     }
 
     // Update the person's information
-    const result = await Person.updateOne({ _id }, { $set: { person: true } });
+    const result = await Person.updateOne({ _id }, { $set: { person: newPersonValue } });
 
     // Check if the document was updated successfully
     if (result.modifiedCount > 0) {
