@@ -4,7 +4,8 @@
     "mongoose": "^8.2.0",
     "node": "^21.6.2"
   },
-  "scripts": {
-  "start": "index.js"
-}
+    "scripts": {
+    "build": "npm",
+    "start": "node index.js"
+  }
 }
