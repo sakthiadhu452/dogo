@@ -6,8 +6,8 @@ const app = express();
 const port = 3000;
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://sakthiadhavank21eie:7399sakthi@cluster0.4ohedjk.mongodb.net/dogo-v', { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.set('strictQuery', false);
+mongoose.connect('mongodb+srv://sakthiadhavank21eie:7399sakthi@cluster0.4ohedjk.mongodb.net/dogo-v', { useNewUrlParser: true, useUnifiedTopology: true });
 // Define a MongoDB schema
 const personSchema = new mongoose.Schema({
   person: Boolean,
