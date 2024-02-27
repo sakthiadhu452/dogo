@@ -45,6 +45,29 @@ app.post('/insert-person', async (req, res) => {
   }
 });
 
+app.put('/update-person', async (req, res) => {
+  try {
+    // Assuming the request body contains the _id of the person to update
+    const { _id } = req.body;
+
+    // Check if _id is provided
+    if (!_id) {
+      return res.status(400).json({ error: '_id parameter is required for updating a person' });
+    }
+
+    // Update the person's information
+    const result = await Person.updateOne({ _id }, { $set: { person: true } });
+
+    // Check if the document was updated successfully
+    if (result.modifiedCount > 0) {
+      res.json({ message: 'Person updated successfully' });
+    } else {
+      res.json({ message: 'Person not found or not updated' });
+    }
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
