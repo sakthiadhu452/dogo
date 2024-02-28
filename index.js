@@ -73,10 +73,13 @@ app.post('/update-person', async (req, res) => {
 app.post('/stop-alarm', async (req, res) => {
   try {
     // Assuming the request body contains the _id and any other fields to update
-    const  newPersonValue  = {
+    const newPersonValue = {
         "_id": "65dd207377ffb3356e4763f2",
-        "person": False
+        "person": false
     };
+
+    // Extract _id from newPersonValue
+    const { _id } = newPersonValue;
 
     // Check if _id is provided
     if (!_id) {
@@ -84,7 +87,7 @@ app.post('/stop-alarm', async (req, res) => {
     }
 
     // Update the person's information
-    const result = await Person.updateOne({ _id }, { $set: { person: newPersonValue } });
+    const result = await Person.updateOne({ _id }, { $set: { person: false } });
 
     // Check if the document was updated successfully
     if (result.modifiedCount > 0) {
