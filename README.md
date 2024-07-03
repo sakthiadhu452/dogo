@@ -1,4 +1,4 @@
-This is small combat robot developed usinng yolo and mongodb databaase where if it detects any unfamiliar faces roaming around border areas like india poakisthan border it will alarms us to the survilance room.
+This is small combat robot developed usinng yolo and mongodb database where if it detects any unfamiliar faces roaming around border areas like india poakisthan border it will alarms us to the survilance room.
 ![20240228_100449](https://github.com/sakthiadhu452/dogo/assets/155182564/c5250985-c215-4e77-9be4-4bcfcb8834e9)
 
 
